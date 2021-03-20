@@ -1,0 +1,15 @@
+[Unit]
+Description=SSD1306 Display Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 -u ssd1306display.py
+WorkingDirectory=/home/pi/services/rpissd1306display
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
