@@ -1,0 +1,11 @@
+[Unit]
+Description=SSD1306 Display off service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/pi/services/rpissd1306display
+ExecStop=/usr/bin/python3 -u ssd1306displayoff.py
+
+[Install]
+WantedBy=multi-user.target
